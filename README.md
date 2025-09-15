@@ -59,7 +59,6 @@ src/
 ---
 
 ## 🔮 Possible Improvements
-- Make the number of runs configurable via CLI args.
 - Add support for multiple coins at once.
 - Write unit tests for the coin flip logic.
 - Provide a histogram of results for large runs.
