@@ -20,7 +20,7 @@ Add `rand` to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-rand = "0.8"
+rand = "0.9.2"
 ```
 
 ---
