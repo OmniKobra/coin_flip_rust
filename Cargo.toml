@@ -1,7 +1,9 @@
 [package]
 name = "coin_flip"
+description = "A library for flipping a coin and getting the result."
 version = "0.1.0"
 edition = "2024"
+license = "MIT OR Apache-2.0"
 
 [dependencies]
 rand = "0.9.2"

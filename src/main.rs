@@ -43,7 +43,7 @@ fn main() {
     println!("Running with {} runs.", total_runs);
     let mut heads_results: u32 = 0;
     let mut tails_results: u32 = 0;
-    let mut rng = rand::rng();
+
     let mut handler = |r: &Coin| {
         if *r == Coin::Heads {
             heads_results += 1;
@@ -52,7 +52,7 @@ fn main() {
         }
     };
     for _ in 1..=total_runs {
-        flip_coin(&mut rng, &mut handler);
+        flip_coin(&mut handler);
     }
     let heads_percentage = calculate_percentage(total_runs, heads_results);
     let tails_percentage = calculate_percentage(total_runs, tails_results);

@@ -1,5 +1,10 @@
+//! # Coin Flip
+//!
+//! A library for flipping a coin and getting the result. Depends on rand "0.9.2"
 use rand::prelude::*;
 
+/// Enum that defines the two coinflip variants 
+/// Heads and Tails with discriminants
 #[derive(PartialEq)]
 pub enum Coin {
     Heads = 0,
@@ -17,7 +22,28 @@ impl TryFrom<u8> for Coin {
     }
 }
 
-pub fn flip_coin<F: FnMut(&Coin)>(rng: &mut ThreadRng, handler: &mut F) -> Coin {
+/// Flips a coin and returns the result
+/// takes an FnMut handler function that takes the result
+/// returns the result from the function
+/// 
+/// # Examples
+/// ```
+/// let mut heads_results: u32 = 0;
+/// let mut tails_results: u32 = 0;
+///
+/// let mut handler = |r: &Coin| {
+///     if *r == Coin::Heads {
+///         heads_results += 1;
+///     } else {
+///         tails_results += 1;
+///     }
+/// };
+/// for _ in 1..=total_runs {
+///     flip_coin(&mut handler);
+/// }
+///```
+pub fn flip_coin<F: FnMut(&Coin)>(handler: &mut F) -> Coin {
+    let mut rng = rand::rng();
     let random = rng.random_range::<u8, _>(0..2);
     let res = <Coin as TryFrom<u8>>::try_from(random).unwrap();
     handler(&res);
