@@ -4,6 +4,10 @@ description = "A library for flipping a coin and getting the result."
 version = "0.1.0"
 edition = "2024"
 license = "MIT OR Apache-2.0"
+authors = ["Omar <omnikobra@yahoo.com>"]
+documentation = "https://docs.rs/coin_flip/0.1.0/coin_flip/"
+repository = "https://github.com/OmniKobra/coin_flip_rust"
+readme = "README.md"
 
 [dependencies]
 rand = "0.9.2"
